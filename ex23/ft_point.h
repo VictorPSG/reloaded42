@@ -6,13 +6,12 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 11:07:21 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/10 10:00:06 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/10 10:53:53 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 typedef struct t_point
 {
-    int x;
-    int y;
-} t_point;
-
+	int	x;
+	int	y;
+}		t_point;
