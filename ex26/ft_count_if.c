@@ -6,22 +6,23 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:32:27 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/10 21:08:32 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/10 21:10:06 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_count_if(char **tab, int (*f)(char*))
+int	ft_count_if(char **tab, int (*f)(char*))
 {
 	int	i;
 	int	count;
 
 	i = 0;
 	count = 0;
-	while(*tab[i] != '\0')
+	while (*tab[i] != '\0')
 	{
-		if(f(*tab[i]) != '\0')
+		if (f(*tab[i]) != '\0')
 		{
 			count++;
 		}
 	}
+	return (count);
 }
