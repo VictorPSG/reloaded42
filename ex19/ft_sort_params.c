@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:53:54 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/13 22:04:54 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/13 22:07:22 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@ void	ft_putchar(char c);
 
 void	print_args(int length, char **argv)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	while (i < length)
@@ -31,9 +31,9 @@ void	print_args(int length, char **argv)
 	}
 }
 
-int		ft_strcmp(char *str1, char *str2)
+int	ft_strcmp(char *str1, char *str2)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str1[i] == str2[i] && str1[i] && str2[i])
