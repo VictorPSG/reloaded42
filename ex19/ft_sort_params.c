@@ -5,69 +5,68 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 19:03:26 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/08 14:16:41 by victda-s         ###   ########.fr       */
+/*   Created: 2024/10/13 21:53:54 by victda-s          #+#    #+#             */
+/*   Updated: 2024/10/13 22:04:54 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+void	ft_putchar(char c);
 
-int	ft_strcmp(char s1[], char s2[])
+void	print_args(int length, char **argv)
 {
-	int	i;
-	int	lenght;
+	int i;
+	int j;
 
-	lenght = 0;
-	i = 0;
-	while (s1[lenght] != '\0')
-		lenght++;
-	while (i <= lenght)
+	i = 1;
+	while (i < length)
 	{
-		if (s1[i] != s2[i])
+		j = 0;
+		while (argv[i][j])
 		{
-			if (s1[i] > s2[i])
-				return (1);
-			else
-				return (-1);
-			i++;
+			ft_putchar(argv[i][j]);
+			j++;
 		}
-	}
-	return (0);
-}
-
-int	ft_strlen(char arr[])
-{
-	int	i;
-
-	i = 0;
-	while (arr[i] != '\0')
+		ft_putchar('\n');
 		i++;
-	return (i);
-}
-void	ft_sort_params(char array[])
-{
-	int	i;
-	int cmp;
-
-	i = 0;
-	while(array[i])
-	{
-		cmp = ft_strcmp(&array[i], &array[i + 1]);
-		if(cmp > 0)
-		{
-			i++;
-		}
-		else{
-			printf("resultado: %d", i);
-			// array[i] = '5';
-			i = 0;
-		}
 	}
 }
 
-int main(void)
+int		ft_strcmp(char *str1, char *str2)
 {
-	char teste[6] = {'5','4','1','2', '1'};
-	ft_sort_params(teste);
+	int i;
+
+	i = 0;
+	while (str1[i] == str2[i] && str1[i] && str2[i])
+		i++;
+	return (str1[i] - str2[i]);
+}
+
+void	sort_args(int length, char **argv)
+{
+	int		i;
+	char	*temp;
+
+	i = 1;
+	while (i < length - 1)
+	{
+		if (ft_strcmp(argv[i], argv[i + 1]) > 0)
+		{
+			temp = argv[i];
+			argv[i] = argv[i + 1];
+			argv[i + 1] = temp;
+			i = 1;
+		}
+		else
+		{
+			i++;
+		}
+	}
+}
+/*
+int		main(int argc, char **argv)
+{
+	sort_args(argc, argv);
+	print_args(argc, argv);
 	return (0);
 }
+*/
